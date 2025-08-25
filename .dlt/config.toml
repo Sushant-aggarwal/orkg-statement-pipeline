@@ -1,0 +1,10 @@
+[core]
+pipeline_name = "scikgdash_statement_pipeline"
+
+[destination]
+name = "postgres"
+
+[runtime]
+request_max_attempts = 8
+request_backoff_factor = 1.5
+request_timeout = 60
