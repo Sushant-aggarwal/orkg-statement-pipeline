@@ -114,4 +114,23 @@ We’ll refresh the dataset automatically with a cron job. This runs the dlt pip
 The ORKG “statements per paper” endpoint doesn’t expose created_at / updated_at, so we currently do a full fetch and merge on id.
 However, other ORKG APIs do provide timestamps. For those, we’ll switch to a true incremental pattern so each run only fetches rows updated since the last sync.
 
+## Tests
+
+This project includes two main kinds of tests:
+
+1. **Unit Test (API)**
+   - `tests/test_api_unit.py`
+   - Uses a **fake DB connection** (no Postgres needed).
+   - Verifies that `/api/statements` returns the correct response shape, pagination metadata, and ordering.
+
+2. **Pipeline Test (dlt)**
+   - `tests/test_pipeline_smoke.py`
+   - Uses **DuckDB** and a **mocked ORKG API** response.
+   - Verifies that the dlt pipeline runs end-to-end, loads rows without error, and writes them to the destination table.
+### Run Tests
+```
+pytest -v
+```
+---
+
 
