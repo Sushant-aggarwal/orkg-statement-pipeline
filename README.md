@@ -99,7 +99,7 @@ username = "${PGUSER}"
 password = "${PGPASSWORD}"
 ```
 
-### frontned/.env  
+### frontend/.env  
 
 ```
 VITE_API_BASE=http://localhost:8000
