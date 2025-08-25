@@ -111,7 +111,7 @@ VITE_API_BASE=http://localhost:8000
 We’ll refresh the dataset automatically with a cron job. This runs the dlt pipeline on a schedule and upserts new/changed rows into Postgres.
 
 ### 2) Use dlt incremental loads where timestamps exist
-The ORKG “statements per paper” endpoint doesn’t expose created_at / updated_at, so we currently do a full fetch and merge on id (idempotent).
+The ORKG “statements per paper” endpoint doesn’t expose created_at / updated_at, so we currently do a full fetch and merge on id.
 However, other ORKG APIs do provide timestamps. For those, we’ll switch to a true incremental pattern so each run only fetches rows updated since the last sync.
 
 
