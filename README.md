@@ -1,1 +1,20 @@
-# orkg-statement-pipeline
+# ORKG Statement Counts — dlt → Postgres → FastAPI → React (Histogram)
+
+## What we’re doing (and why)
+
+We’re building a pipeline + API + UI for analyzing **statements per paper** in the [ORKG](https://orkg.org).
+
+- **Extract** “statements per paper” data from the ORKG API.  
+- **Load** it into **Postgres** using [dlt](https://dlthub.com).  
+- **Serve** it via a **FastAPI** backend.  
+- **Visualize** it in a simple **React (Vite)** frontend as a histogram.  
+
+### Why use dlt?
+- **Idempotent loads** — define a `primary_key` and `merge` mode so data is safely updated on re-run.  
+- **Pagination handled** — ORKG’s API is paged; dlt can stream this easily.  
+- **Schema management** — dlt infers or enforces schema in Postgres.  
+- **Reproducible** — config + secrets separated, easy to share or schedule.  
+
+---
+
+## Architecture
