@@ -50,7 +50,7 @@ source dlt-env/bin/activate   # on Windows use: dlt-env\Scripts\activate
 
 ### install dependencies (backend)
 ```
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 ### install dependencies (frontend)
