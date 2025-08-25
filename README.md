@@ -76,7 +76,7 @@ npm run dev
 
 Set up the following environment files before running the project:
 
-### 1. `.env` (repo root, **not committed**)  
+### .env (repo root, **not committed**)  
 Used by **FastAPI / psycopg2** for Postgres connection:
 
 ```
@@ -87,7 +87,7 @@ PGUSER=user
 PGPASSWORD=password
 ```
 
-### 2. `.dlt/secrets.toml` (**not committed**)  
+### .dlt/secrets.toml (**not committed**)  
 Used by **dlt pipeline** to connect to Postgres (reuses the same env vars):
 
 ```toml
@@ -99,7 +99,7 @@ username = "${PGUSER}"
 password = "${PGPASSWORD}"
 ```
 
-### 2. `frontned/.env`  
+### frontned/.env  
 
 ```
 VITE_API_BASE=http://localhost:8000
