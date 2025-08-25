@@ -56,6 +56,11 @@ host = "${PGHOST}"
 port = "${PGPORT}"
 database = "${PGDATABASE}"
 username = "${PGUSER}"
-password = "${PGPASSWORD}"```
+password = "${PGPASSWORD}"
+```
 
+### 2. `frontned/.env`  
 
+```
+VITE_API_BASE=http://localhost:8000
+```
