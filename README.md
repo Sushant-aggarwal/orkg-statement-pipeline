@@ -64,3 +64,47 @@ password = "${PGPASSWORD}"
 ```
 VITE_API_BASE=http://localhost:8000
 ```
+## Installation & Setup
+
+Follow these steps to set up the project locally.
+
+---
+
+### 1. Backend (dlt + FastAPI)
+
+# clone repo and enter project folder
+```
+git clone <your-repo-url>
+cd orkg-statement-pipeline
+```
+
+# create virtualenv
+```
+python -m venv dlt-env
+source dlt-env/bin/activate   # on Windows use: dlt-env\Scripts\activate
+```
+
+# install dependencies (backend)
+```
+pip install -r requirements.txt
+```
+
+# install dependencies (frontend)
+```
+cd frontend
+npm install
+```
+
+# run the dlt pipeline (loads ORKG data into Postgres)
+```
+python -m backend.pipeline.run
+```
+
+# start FastAPI server
+```
+uvicorn backend.app.main:app --reload --port 8000
+```
+# start frontend
+```
+npm run dev
+```
