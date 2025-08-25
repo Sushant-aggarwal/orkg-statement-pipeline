@@ -17,4 +17,17 @@ We’re building a pipeline + API + UI for analyzing **statements per paper** in
 
 ---
 
-## Architecture
+## Prerequisites
+
+Make sure you have the following installed:
+
+- **Python** 3.10+  
+- **Node.js** 18+  
+- **Postgres** 13+ (running on `localhost:5432`)  
+
+And in Postgres, create the database:
+
+```sql
+-- Database
+CREATE DATABASE orkgstatement;
+
