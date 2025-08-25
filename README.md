@@ -74,7 +74,7 @@ Follow these steps to set up the project locally.
 
 # clone repo and enter project folder
 ```
-git clone <your-repo-url>
+git clone <repo-url>
 cd orkg-statement-pipeline
 ```
 
