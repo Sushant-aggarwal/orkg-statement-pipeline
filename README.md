@@ -30,4 +30,32 @@ And in Postgres, create the database:
 ```sql
 -- Database
 CREATE DATABASE orkgstatement;
+```
+
+## Environment Variables
+
+Set up the following environment files before running the project:
+
+### 1. `.env` (repo root, **not committed**)  
+Used by **FastAPI / psycopg2** for Postgres connection:
+
+```
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=orkgstatement
+PGUSER=user
+PGPASSWORD=password
+```
+
+### 2. `.dlt/secrets.toml` (**not committed**)  
+Used by **dlt pipeline** to connect to Postgres (reuses the same env vars):
+
+```toml
+[destination.postgres.credentials]
+host = "${PGHOST}"
+port = "${PGPORT}"
+database = "${PGDATABASE}"
+username = "${PGUSER}"
+password = "${PGPASSWORD}"```
+
 
