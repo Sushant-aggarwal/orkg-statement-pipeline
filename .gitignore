@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual envs
+.venv/
+venv/
+scikg-env/
+dlt-env/
+
+# dlt secrets/state
+.dlt/secrets.toml
+.dlt/pipelines/
+*.duckdb
+data/
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+*.log
+
+# OS
+.DS_Store
